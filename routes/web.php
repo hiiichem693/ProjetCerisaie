@@ -65,3 +65,6 @@ Route::get('/supprimerSejour/{id}', [SejourController::class, 'suppression']);
 
 Route::get('/updatePassword/{pwd}',  [App\Http\Controllers\UtilisateurController::class, 'updatePassword']);
 
+Route::get('/getSejourParMois', function () {
+    return view('vues/formSejourMois');
+});
