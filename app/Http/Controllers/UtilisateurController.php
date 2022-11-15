@@ -27,7 +27,7 @@ class UtilisateurController extends Controller {
             }
         } catch (MonException $e) {
             $erreur = $e->getMessage();
-            return view('Error', compact('erreure'));
+            return view('Error', compact('erreur'));
         }
     }
 
