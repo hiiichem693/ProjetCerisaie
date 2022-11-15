@@ -49,8 +49,8 @@ Route::get('/ajoutSejour', [SejourController::class, 'ajoutSejour']);
 
 // post ajout
 Route::post('/ajoutSejour', [
-    'as' => 'postajoutSejour',
-    'uses' => [SejourController::class, 'postajoutSejour']
+    'as' => 'postAjoutSejour',
+    'uses' => 'App\Http\Controllers\SejourController@postAjoutSejour'
 ]);
 
 Route::get('/modifierSejour/{id}', [SejourController::class, 'modification']);
@@ -58,7 +58,7 @@ Route::get('/modifierSejour/{id}', [SejourController::class, 'modification']);
 //post modif
 Route::post('/postmodifierSejour/{id}', [
     'as' => 'postmodifierSejour',
-    'uses' => [SejourController::class, 'postmodifierSejour']
+    'uses' => 'App\Http\Controllers\SejourController@postmodifierSejour'
 ]);
 // suppression
 Route::get('/supprimerSejour/{id}', [SejourController::class, 'suppression']);

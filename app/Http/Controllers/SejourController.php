@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Session;
 
 class SejourController extends Controller {
 
-    // On recherche tous les séjours   
+    // On recherche tous les séjours
     public function listeSejours() {
         try {
             $unSejour = new ServiceSejour();
@@ -28,7 +28,7 @@ class SejourController extends Controller {
             $erreur = $e->getMessage();
             return view('Error', compact('erreur'));
         } catch (Exception $ex) {
-            $erreur = $e->getMessage();
+            $erreur = $ex->getMessage();
             return view('Error', compact('erreur'));
         }
     }
@@ -46,7 +46,7 @@ class SejourController extends Controller {
                 $erreur = $e->getMessage();
                 return view('Error', compact('erreur'));
             } catch (Exception $ex) {
-                $erreur = $e->getMessage();
+                $erreur = $ex->getMessage();
                 return view('Error', compact('erreur'));
             }
         } else {
@@ -69,7 +69,7 @@ class SejourController extends Controller {
             $erreur = $e->getMessage();
             return view('Error', compact('erreur'));
         } catch (Exception $ex) {
-            $erreur = $e->getMessage();
+            $erreur = $ex->getMessage();
             return view('Error', compact('erreur'));
         }
     }
@@ -90,7 +90,7 @@ class SejourController extends Controller {
             $erreur = $e->getMessage();
             return view('Error', compact('erreur'));
         } catch (Exception $ex) {
-            $erreur = $e->getMessage();
+            $erreur = $ex->getMessage();
             return view('Error', compact('erreur'));
         }
     }
@@ -112,13 +112,13 @@ class SejourController extends Controller {
             $erreur = $e->getMessage();
             return view('Error', compact('erreur'));
         } catch (Exception $ex) {
-            $erreur = $e->getMessage();
+            $erreur = $ex->getMessage();
             return view('Error', compact('erreur'));
         }
     }
 
-    
-    
+
+
      public function suppression($id) {
 
         try {
@@ -129,7 +129,7 @@ class SejourController extends Controller {
             $erreur = $e->getMessage();
             return view('Error', compact('erreur'));
         } catch (Exception $ex) {
-            $erreur = $e->getMessage();
+            $erreur = $ex->getMessage();
             return view('Error', compact('erreur'));
         }
     }
