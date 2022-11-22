@@ -13,6 +13,7 @@
 use App\Http\Controllers\UtilisateurController;
 use App\Http\Controllers\SejourController;
 
+
 Route::get('/', function () {
     return view('home');
 });
@@ -38,7 +39,7 @@ Route::post('/login', [UtilisateurController::class, 'signIn']);
 /* * *********************************************************************** */
 
 
-Route::get('/getListeSejour', [SejourController::class, 'listeSejours']);
+Route::get('/getListeSejour', [SejourController::class, 'listeSejours'])->middleware('connect');
 
 /*
  * Ajout Séjour
@@ -68,3 +69,7 @@ Route::get('/updatePassword/{pwd}',  [App\Http\Controllers\UtilisateurController
 Route::get('/getSejourParMois', function () {
     return view('vues/formSejourMois');
 });
+
+
+
+

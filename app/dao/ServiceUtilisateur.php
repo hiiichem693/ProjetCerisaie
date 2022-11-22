@@ -35,6 +35,7 @@ class ServiceUtilisateur
                 ->where('NomUtil', '=', $login)
                 ->first();
             if ($Utilisateur) {
+                $temp=Hash::make($pwd);
                 if (Hash::check($pwd, $Utilisateur->MotPasse)) {
                     Session::put('id', $Utilisateur->NumUtil);
                     Session::put('role', $Utilisateur->role);

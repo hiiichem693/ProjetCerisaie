@@ -2,7 +2,7 @@
 @section('content')
  {!! Form::open(['url' => 'ajoutSejour', 'files' => true]) !!}
 <div class="well">
-   
+
     <h1>Ajouter Séjour</h1>
     <div class="form-group">
         <label for="numClient"> Numéro Client : </label>
@@ -33,7 +33,7 @@
     <script>$("#DatedebSej").datepicker();</script>
     <div class="form-group">
         <label for="DateFinSej"> Date de fin :</label>
-        <input type ="date" name="DateFinSej" id ="DateFinSej" class="form-control" min="0"> 
+        <input type ="date" name="DateFinSej" id ="DateFinSej" class="form-control" min="0">
     </div>
      <script>$("#DateFinSej").datepicker();</script>
     <div class="form-group">
@@ -44,13 +44,11 @@
         <button type="submit" class="btn btn-default btn-primary"><span class="glyphicon glyphicon-ok"></span>
             Valider
         </button>
-        
+
         <button type="button" class="btn btn-default btn-primary"
-                onclick="{
-                            window.location = '../public/home';
-                        }"
+                onclick="{window.location = '../public/home';}"
             <span class="glyphicon glyphicon-remove"></span> Annuler
-                     
+
         </button>
     </div>
  </div>
