@@ -68,4 +68,22 @@ class ServiceUtilisateur
             throw new MonException($e->getMessage());
         }
     }
+
+    private static $modeleLogin = "/^[A-Z[A-Za-z]{3,19}$/";
+    private static $modelepwd = "[^!@#$%&()]";
+
+    public static function verifLogin ($login)
+    {
+        if (preg_match(self::$modeleLogin, $login))
+            return true;
+        else
+            return false;
+    }
+
+    public static function verifMotPasse($pwd)
+    {
+        if (preg_match(self::$modelepwd, $pwd))
+            return true;
+        else return false;
+    }
 }

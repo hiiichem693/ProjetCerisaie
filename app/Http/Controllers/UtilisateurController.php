@@ -16,13 +16,28 @@ class UtilisateurController extends Controller {
     public function signIn() {
         try {
             $login = Request::input('login');
-            $pwd = Request::input('pwd');
-            $unUtilisateur = new ServiceUtilisateur();
-            $connected = $unUtilisateur->login($login, $pwd);
-            if ($connected) {
-                return view('home');
-            } else {
-                $erreur = "Login ou mot de passe inconnu !";
+            if ( ServiceUtilisateur::verifLogin($login))
+            {
+                $pwd = Request::input('pwd');
+                if ( ServiceUtilisateur::verifMotPasse($pwd))
+                {
+                    $unUtilisateur = new ServiceUtilisateur();
+                    $connected = $unUtilisateur->login($login, $pwd);
+                    if ($connected) {
+                        return view('home');
+                    } else {
+                        $erreur = "Login ou mot de passe inconnu !";
+                        return view('Error', compact('erreur'));
+                    }
+                }
+                else {
+                    $erreur = "Mot de passe non conforme";
+                    return view('Error', compact('erreur'));
+                }
+            }
+            else
+            {
+                $erreur = "Login non conforme";
                 return view('Error', compact('erreur'));
             }
         } catch (MonException $e) {
