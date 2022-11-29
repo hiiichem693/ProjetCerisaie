@@ -70,7 +70,7 @@ class ServiceUtilisateur
     }
 
     private static $modeleLogin = "/^[A-Z[A-Za-z]{3,19}$/";
-    private static $modelepwd = "[^!@#$%&()]";
+    private static $modelepwd = "/^[^!@#$%&()]+$/";
 
     public static function verifLogin ($login)
     {
